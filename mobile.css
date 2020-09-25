@@ -1,0 +1,45 @@
+@media screen and (max-width:1440px) {
+    .body_container {
+        margin: 50px auto;
+    }
+    * {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .body_container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .body_container {
+        width: 65%;
+    }
+    * {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    * {
+        font-size: 15px;
+    }
+    .body_container {
+        width: 85%;
+    }
+    .logo img {
+        width: 200px;
+        height: 120px;
+    }
+    .icon {
+        width: 15%;
+    }
+    .icon i {
+        font-size: 25px;
+    }
+    .form_group {
+        padding-top: 20px;
+    }
+}

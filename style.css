@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+}
+
+body {
+    display: flex;
+    height: auto;
+    background-color: rgb(45, 187, 173);
+}
+
+.body_container {
+    margin: auto;
+    margin-top: 50px;
+    padding: 50px 10px;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 5px gray;
+}
+
+.container {
+    padding: 20px 20px;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+}
+
+.title p {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form_group {
+    display: flex;
+    padding-top: 50px;
+    width: 100%;
+    height: auto;
+}
+
+.icon {
+    width: 10%;
+}
+
+.form_control {
+    width: 90%;
+    display: inline-block;
+    border-bottom: 2px solid black;
+}
+
+.form_control input {
+    width: 100%;
+    height: 40px;
+    border: none;
+}
+
+.icon i {
+    font-size: 35px;
+    color: rgb(23, 170, 207);
+}
+
+#submit {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(34, 161, 134);
+    border: none;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+    padding: 7px 0;
+    border-radius: 15px;
+    box-shadow: 0 3px 3px 3px gray;
+}
+
+#submit:hover {
+    background-color: chocolate;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.footer_right a {
+    text-decoration: transparent;
+}
+
+.footer_right a:hover {
+    color: red;
+}
+
+.error_form {
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+}
