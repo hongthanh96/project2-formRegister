@@ -7,6 +7,7 @@
     <title>Registration Form</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
@@ -23,7 +24,8 @@
                 <div class="form_group">
                     <div class="icon"><i class="fas fa-user"></i></div>
                     <div class="form_control">
-                        <input type="text" name="name" id="name" placeholder="Username" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> UserName không được để trống!' data-rule-minlength='3' data-msg-minlength='<i class="fas fa-exclamation-triangle"></i> Tên phải có ít nhất 3 kí tự!'
+                        <label id="label1" for="" class="flyTop"></label>
+                        <input type="text" name="name" id="name" oninput="checkName(this.value)" placeholder="Username" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> UserName không được để trống!' data-rule-minlength='3' data-msg-minlength='<i class="fas fa-exclamation-triangle"></i> Tên phải có ít nhất 3 kí tự!'
                             data-rule-maxlength='15' data-msg-maxlength='<i class="fas fa-exclamation-triangle"></i> Tên không quá 15 kí tự!'>
                     </div>
                 </div>
@@ -31,14 +33,17 @@
                 <div class="form_group">
                     <div class="icon"><i class="fas fa-envelope"></i></div>
                     <div class="form_control">
-                        <input type="text" name="email" id="email" placeholder="Email" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Email không được để trống !' data-rule-regex='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' data-msg-regex='<i class="fas fa-exclamation-triangle"></i> Email không đúng định dạng!'>
+                        <label id="label2" for="" class="flyTop"></label>
+                        <input type="text" name="email" id="email" oninput="checkEmail(this.value)" placeholder="Email" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Email không được để trống !' data-rule-regex='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+                            data-msg-regex='<i class="fas fa-exclamation-triangle"></i> Email không đúng định dạng!'>
                     </div>
                 </div>
                 <div class="error_form"><label id="email-error" class="error" for="email"></label></div>
                 <div class="form_group">
                     <div class="icon"><i class="fas fa-phone-alt"></i></div>
                     <div class="form_control">
-                        <input type="text" name="phone" id="phone" placeholder="Telephone" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Số điện thoại không đươc để trống!' data-rule-number='true' data-msg-number='<i class="fas fa-exclamation-triangle"></i> Số điện thoại không đúng định dạng!'
+                        <label id="label3" for="" class="flyTop"></label>
+                        <input type="text" name="phone" id="phone" oninput="checkPhone(this.value)" placeholder="Telephone" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Số điện thoại không đươc để trống!' data-rule-number='true' data-msg-number='<i class="fas fa-exclamation-triangle"></i> Số điện thoại không đúng định dạng!'
                             data-rule-regex='(03|07|08|09|01[2|6|8|9])+([0-9]{8})\b' data-msg-regex='<i class="fas fa-exclamation-triangle"></i> Số điện thoại không hợp lệ!'>
                     </div>
                 </div>
@@ -46,14 +51,16 @@
                 <div class="form_group">
                     <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="form_control">
-                        <input type="text" name="address" id="address" placeholder="Address" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Địa chỉ không được để trống!' data-rule-minlength="5" data-msg-minlength='<i class="fas fa-exclamation-triangle"></i> Địa chỉ phải có ít nhất 5 kí tự!'>
+                        <label id="label4" for="" class="flyTop"></label>
+                        <input type="text" name="address" id="address" oninput="checkAddress(this.value)" placeholder="Address" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Địa chỉ không được để trống!' data-rule-minlength="5" data-msg-minlength='<i class="fas fa-exclamation-triangle"></i> Địa chỉ phải có ít nhất 5 kí tự!'>
                     </div>
                 </div>
                 <div class="error_form"><label id="address-error" class="error" for="address"></label></div>
                 <div class="form_group">
                     <div class="icon"><i class="fas fa-lock"></i></div>
                     <div class="form_control">
-                        <input type="password" name="pass1" id="pass1" placeholder="Password" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Password không được để trống!' data-rule-minlength='6' data-msg-minlength='<i class="fas fa-exclamation-triangle"></i> Password phải có ít nhất 6 kí tư!'
+                        <label id="label5" for="" class="flyTop"></label>
+                        <input type="password" name="pass1" id="pass1" oninput="checkPass1(this.value)" placeholder="Password" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Password không được để trống!' data-rule-minlength='6' data-msg-minlength='<i class="fas fa-exclamation-triangle"></i> Password phải có ít nhất 6 kí tư!'
                             data-rule-maxlength='20' data-msg-maxlength='<i class="fas fa-exclamation-triangle"></i> Password phải ít hơn 20 kí tự'>
                     </div>
                 </div>
@@ -61,18 +68,23 @@
                 <div class="form_group">
                     <div class="icon"><i class="fas fa-lock"></i></div>
                     <div class="form_control">
-                        <input type="password" name="comfirmpass" id="comfirmpass" placeholder="Comfirm password" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Comfirm Passwork không được để trống!' data-rule-equalto=”#pass1” data-msg-equalto='<i class="fas fa-exclamation-triangle"></i> Xác nhận Mật khẩu không trùng khớp!'>
+                        <label id="label6" for="" class="flyTop"></label>
+                        <input type="password" name="comfirmpass" id="comfirmpass" oninput="checkComfirmPass(this.value)" placeholder="Comfirm password" data-rule-required='true' data-msg-required='<i class="fas fa-exclamation-triangle"></i> Comfirm Passwork không được để trống!'
+                            data-rule-equalto="#pass1" data-msg-equalto='<i class="fas fa-exclamation-triangle"></i> Xác nhận Mật khẩu không trùng khớp!'>
                     </div>
                 </div>
-                <div class="error_form">
-                    <div class="error_form"><label id="comfirmpass-error" class="error" for="comfirmpass"></label></div>
-                    <div class="form_group">
-                        <input type="button" name="" value="REGISTER NOW" id="submit" placeholder="Re-type password" onclick="validate()">
-                    </div>
-                    <div class="footer">
-                        <div class="footer_left">Already have an account? </div>
-                        <div class="footer_right"><a href="#">Login</a></div>
-                    </div>
+                <div class="error_form"><label id="comfirmpass-error" class="error" for="comfirmpass"></label></div>
+                <div class="avatar">
+                    <label for="file_img"><img src="./avater_none.png" alt="" srcset="" id="image"></label>
+                    <input type="file" name="" id="file_img" onchange="uploadAvatar(this)">
+                </div>
+
+                <div class="form_group">
+                    <input type="button" name="" value="REGISTER NOW" id="submit" placeholder="Re-type password" onclick="validate()">
+                </div>
+                <div class="footer">
+                    <div class="footer_left">Already have an account? </div>
+                    <div class="footer_right"><a href="#">Login</a></div>
                 </div>
         </form>
         </div>
@@ -80,6 +92,7 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
         <script src="https://kit.fontawesome.com/607b7b9d04.js" crossorigin="anonymous"></script>
         <script src="js.js"></script>
+        <script src="uploadImage.js"></script>
 
 </body>
 
